@@ -1,6 +1,7 @@
 "use client";
 // @flow strict
 import { isValidEmail } from '@/utils/check-email';
+import Loader from '@/app/components/helper/loader';
 import axios from 'axios';
 import { useState } from 'react';
 import { TbMailForward } from "react-icons/tb";
@@ -9,6 +10,7 @@ import  emailjs  from '@emailjs/browser';
 
 function ContactWithoutCaptcha() {
   const [error, setError] = useState({ email: false, required: false });
+  const[loading,setLoading] = useState(false)
   const [userInput, setUserInput] = useState({
     name: '',
     email: '',
@@ -23,6 +25,7 @@ function ContactWithoutCaptcha() {
 
   const handleSendMail = async (e) => {
     // console.log('send clicked')
+    setLoading(true)
     e.preventDefault();
     if (!userInput.email || !userInput.message || !userInput.name) {
       setError({ ...error, required: true });
@@ -50,12 +53,16 @@ function ContactWithoutCaptcha() {
           message: '',
         });
       };
+      setLoading(false)
     } catch (error) {
       toast.error(error?.text || error);
+      setLoading(false)
     };
   };
 
   return (
+  <>
+  {loading && <Loader/>}
     <div className="">
       <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
         Contact with me
@@ -128,6 +135,7 @@ function ContactWithoutCaptcha() {
         </div>
       </div>
     </div>
+  </>
   );
 };
 
