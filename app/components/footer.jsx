@@ -14,6 +14,7 @@ function Footer() {
           <p className="text-sm">
             © Developer Portfolio by <Link target="_blank" href="https://www.linkedin.com/in/abu-said-bd/" className="text-[#16f2b3]">SHIBIN A</Link>
           </p>
+          
           {/* <div className="flex items-center gap-5">
             <Link
               target="_blank"
