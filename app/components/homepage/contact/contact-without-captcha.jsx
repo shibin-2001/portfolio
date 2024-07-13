@@ -22,7 +22,7 @@ function ContactWithoutCaptcha() {
   };
 
   const handleSendMail = async (e) => {
-    console.log('send clicked')
+    // console.log('send clicked')
     e.preventDefault();
     if (!userInput.email || !userInput.message || !userInput.name) {
       setError({ ...error, required: true });
@@ -36,10 +36,10 @@ function ContactWithoutCaptcha() {
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
-console.log(serviceID,templateID,options,userInput)
+// console.log(serviceID,templateID,options,userInput)
     try {
       const res = await emailjs.send(serviceID, templateID, userInput, options);
-      console.log(res,'resss')
+      // console.log(res,'resss')
       const teleRes = await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/api/contact`, userInput);
 
       if (res.status === 200 || teleRes.status === 200) {
