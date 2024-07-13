@@ -11,6 +11,7 @@ export const educations = [
     duration: "2017 - 2018",
     institution: "Gnanadeepam Matriculation Higher Secondary School",
   },
+  
   {
     id: 3,
     title: "Secondary School Certificate",
