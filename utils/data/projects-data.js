@@ -18,7 +18,7 @@ export const projectsData = [
         id: 2,
         name: 'Feather Chat App',
         description: 'I led the development of Feather Chat App using React Native and Firebase. With Redux for state management, WebSocket for real-time communication, and TypeScript for type-safe code, the app ensures a seamless user experience. Leveraging Express.js and Firebase Functions facilitated backend operations and scalability. This mobile-first solution prioritizes secure messaging and user engagement, enhancing connectivity.',
-        tools: ['React Native', 'Firebase', "Redux", "Web Socket", "TypeScript", "Express Js", "Firebase Functions"],
+        tools: ['React Native','Flutter', 'Firebase', "Redux", "Web Socket", "TypeScript", "Express Js", "Firebase Functions"],
         role: 'Full Stack Developer',
         code: '',
         demo: '',
